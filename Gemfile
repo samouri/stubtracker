@@ -1,2 +1,7 @@
+source 'http://rubygems.org'
+
 gem 'stubhub'
-gem 'sinatra'
+#gem 'sinatra'
+gem 'json'
+gem 'httparty'
+
