@@ -8,19 +8,12 @@ Bundler.require(:default)
 #First read the numbers to track from tracklist
 to_track = []
 File.open('to_track.list').each do |line|
-	to_track << line.chomp.to_i
+	to_track << line.to_i
 end
 
 events = []
 to_track.each do | e_num|
-	events << Stubhub::Event.find_by_event_id(e_num) # => returns a Ticket object
-end
-
-
-class Stubhub::Event
-	def keys
-		return @table.keys
-	end 
+	events << Stubhub::Event.find_by_event_id(e_num)
 end
 
 events.each do | ev |
